@@ -33,3 +33,9 @@ Implement stack (LIFO) using micro service architecture and deploy minikube envi
     * http://localhost:7080/get?db=postgres
     
       <img src="https://github.com/aninditadatta12/stack-app/blob/main/images/get_operation.jpg" alt="drawing" width="1000" height="300"/>
+
+
+##### This App Works on Kubernetes
+      <img src="https://github.com/aninditadatta12/stack-app/blob/main/images/kubernates.jpg" alt="drawing" width="1000" height="300"/>
+      
+ 
