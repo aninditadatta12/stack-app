@@ -68,3 +68,9 @@ Implement stack (LIFO) using micro service architecture and deploy minikube envi
    4. Now let's deploy our app:
    
       kubectl create deployment stackapp --image=aninditadatta12/stackapp:latest
+      
+  5. As we are not exposing our app on external port then we can expose it to access using command.
+  
+      * kubectl port-forward service/stackapp 7080:8080
+
+ 6. Now we will be able to access the app on port localhost:7080
