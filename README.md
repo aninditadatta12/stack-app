@@ -10,7 +10,6 @@ Implement stack (LIFO) using micro service architecture and deploy minikube envi
 5. Container: Docker
 6. Build Tool: Gradle
 7. Deployment Platform: Kubernetes (Minikube)
-8. Gradle workflow enable for CI in github
 
 ## API Details
 1. * Push Operation:
