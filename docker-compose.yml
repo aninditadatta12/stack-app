@@ -1,36 +1,35 @@
 version: '3'
-  services:
-    mongo:
-      image: mongo:latest
-      container_name: mongodb-test
-      ports:
-        - 27018:27017
-      volumes:
-        - $HOME/mongo:/data/db
-      restart: always
+services:
+  mongo:
+    image: mongo:latest
+    container_name: mongodb-test
+    ports:
+      - 27018:27017
+    volumes:
+      - $HOME/mongo:/data/db
+    restart: always
 
-    #  postgresdb:
-    #    image: postgres:latest
-    #    ports:
-    #      - 5432:5432
-    #    environment:
-    #      - POSTGRES_PASSWORD=admin
-    #      - POSTGRES_USER=postgres
-    #      - POSTGRES_DB=PushTable1
+  postgresdb:
+    image: postgres:latest
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgresdb
 
 
+  springboot:
+    build: .
+    #image: aninditadatta12/stackapp:latest
+    restart: always
+    container_name: springboot
+    ports:
+      - 8080:8080
+    working_dir: /opt/app
+    depends_on:
+      - mongo
+      - postgresdb
 
-    springboot:
-      build: .
-      #image: aninditadatta12/stackapp:latest
-      restart: always
-      container_name: springboot
-      ports:
-        - 8080:8080
-      working_dir: /opt/app
-      depends_on:
-        - mongo
-        #- postgresdb
-
-  volumes:
-    postgres-data:
+volumes:
+  postgres-data:
