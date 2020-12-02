@@ -1,5 +1,6 @@
 package com.nokia.stack.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
@@ -12,10 +13,12 @@ public class PushToPostgres {
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @JsonIgnore
     private long id;
 
     @Column
     private long data;
+    @JsonIgnore
     @Column
     private long createdtimestamp;
 
