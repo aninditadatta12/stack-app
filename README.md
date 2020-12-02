@@ -46,11 +46,11 @@ Implement stack (LIFO) using micro service architecture and deploy minikube envi
    1. Deploy both data services 1st in our case Mongo and Postgres.
       All configuration files are there in /resources directory
    2. Commands used 
-      # For Mongo:
+      #### For Mongo:
       
       * kubectl apply -f /Users/Documents/stack/src/main/resources/mongo.yaml --validate=false
       
-      # For Postgres:
+      #### For Postgres:
       
       * kubectl create -f /Users/Documents/stack/src/main/resources/postgres-configmap.yaml
       * kubectl create -f /Users/Documents/stack/src/main/resources/postgres-storage.yaml
