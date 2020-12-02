@@ -20,16 +20,16 @@ Implement stack (LIFO) using micro service architecture and deploy minikube envi
   "data": 104,
   "db": "postgres"
 }
-<img src="https://github.com/aninditadatta12/stack-app/blob/main/images/push_operation.jpg" alt="drawing" width="1000" height="300"/> 
+      <img src="https://github.com/aninditadatta12/stack-app/blob/main/images/push_operation.jpg" alt="drawing" width="1000" height="300"/> 
 
 
 2. * Pop Operation: 
     * http://localhost:7080/pop?db=postgres
     
-    <img src="https://github.com/aninditadatta12/stack-app/blob/main/images/pop_operation.jpg" alt="drawing" width="1000" height="300"/>
+      <img src="https://github.com/aninditadatta12/stack-app/blob/main/images/pop_operation.jpg" alt="drawing" width="1000" height="300"/>
     
     
 3. * Get Operation:
     * http://localhost:7080/get?db=postgres
     
-   <img src="https://github.com/aninditadatta12/stack-app/blob/main/images/get_operation.jpg" alt="drawing" width="1000" height="300"/>
+      <img src="https://github.com/aninditadatta12/stack-app/blob/main/images/get_operation.jpg" alt="drawing" width="1000" height="300"/>
