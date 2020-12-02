@@ -10,3 +10,19 @@ Implement stack (LIFO) using micro service architecture and deploy minikube envi
 6. Build Tool: Gradle
 7. Deployment Platform: Kubernetes (Minikube)
 8. Gradle workflow enable for CI in github
+
+##### API Details
+1. * Push Operation:
+
+    * http://localhost:7080/push
+    * Body:
+      {
+  "data": 104,
+  "db": "postgres"
+}
+
+2. * Pop Operation: 
+    * http://localhost:7080/pop?db=postgres
+    
+3. * Get Operation:
+    * http://localhost:7080/get?db=postgres
