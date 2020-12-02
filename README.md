@@ -46,14 +46,16 @@ Implement stack (LIFO) using micro service architecture and deploy minikube envi
    1. Deploy both data services 1st in our case Mongo and Postgres.
       All configuration files are there in /resources directory
    2. Commands used 
-      For Mongo:
-      kubectl apply -f /Users/Documents/stack/src/main/resources/mongo.yaml --validate=false
+      # For Mongo:
       
-      For Postgres:
-      kubectl create -f /Users/Documents/stack/src/main/resources/postgres-configmap.yaml
-      kubectl create -f /Users/Documents/stack/src/main/resources/postgres-storage.yaml
-      kubectl create -f /Users/Documents/stack/src/main/resources/postgres-deployment.yaml
-      kubectl create -f /Users/Documents/stack/src/main/resources/postgres-service.yaml
+      * kubectl apply -f /Users/Documents/stack/src/main/resources/mongo.yaml --validate=false
+      
+      # For Postgres:
+      
+      * kubectl create -f /Users/Documents/stack/src/main/resources/postgres-configmap.yaml
+      * kubectl create -f /Users/Documents/stack/src/main/resources/postgres-storage.yaml
+      * kubectl create -f /Users/Documents/stack/src/main/resources/postgres-deployment.yaml
+      * kubectl create -f /Users/Documents/stack/src/main/resources/postgres-service.yaml
       
    3. Now lets build our spring-boot app and push to docker hub
       Build it image using commnd: 
