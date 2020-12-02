@@ -1,8 +1,20 @@
 com/nokia/stack/model/PushData.java
  com.nokia.stack.model.PushData
+com/nokia/stack/config/SwaggerConfig.java
+ com.nokia.stack.config.SwaggerConfig
 com/nokia/stack/StackApplication.java
  com.nokia.stack.StackApplication
+com/nokia/stack/service/Service.java
+ com.nokia.stack.service.Service
+com/nokia/stack/model/PushToPostgres.java
+ com.nokia.stack.model.PushToPostgres
+com/nokia/stack/repo/PostgresRepository.java
+ com.nokia.stack.repo.PostgresRepository
 com/nokia/stack/repo/MongoRepository.java
  com.nokia.stack.repo.MongoRepository
 com/nokia/stack/controller/Controller.java
  com.nokia.stack.controller.Controller
+com/nokia/stack/model/PushToMongo.java
+ com.nokia.stack.model.PushToMongo
+com/nokia/stack/service/ServiceImpl.java
+ com.nokia.stack.service.ServiceImpl

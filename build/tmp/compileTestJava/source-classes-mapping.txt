@@ -1,2 +1,0 @@
-com/nokia/stack/StackApplicationTests.java
- com.nokia.stack.StackApplicationTests

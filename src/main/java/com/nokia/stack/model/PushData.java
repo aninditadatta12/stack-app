@@ -1,28 +1,13 @@
 package com.nokia.stack.model;
 
+import org.springframework.stereotype.Component;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-
-
-@Document(collection = "pushdata")
+@Component
 public class PushData {
 
-
-    @Id
-    private long id;
-
     private long data;
+    private String db;
 
-    private long time;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public long getData() {
         return data;
@@ -32,12 +17,11 @@ public class PushData {
         this.data = data;
     }
 
-
-    public long getTime() {
-        return time;
+    public String getDb() {
+        return db;
     }
 
-    public void setTime(long time) {
-        this.time = time;
+    public void setDb(String db) {
+        this.db = db;
     }
 }

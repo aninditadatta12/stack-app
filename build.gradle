@@ -17,8 +17,23 @@ dependencies {
 	compile group: 'org.springframework', name: 'spring-web', version: '5.3.1'
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.4.0'
 	compile 'org.springframework.boot:spring-boot-starter-data-mongodb'
+	compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.4.0'
+	compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.4.0'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation("org.codehaus.groovy:groovy-all:2.4.12")
+	testImplementation("org.spockframework:spock-spring:1.1-groovy-2.4-rc-4")
+	testImplementation("org.spockframework:spock-core:1.1-groovy-2.4-rc-4")
+	testCompile("cglib:cglib:3.2.5")
+	testCompile("net.bytebuddy:byte-buddy:1.9.13")
+	testCompile("net.bytebuddy:byte-buddy-agent:1.9.13")
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.4.0'
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-jdbc', version: '2.4.0'
+	compile group: 'org.postgresql', name: 'postgresql', version: '42.2.18'
+
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
 
 }
 

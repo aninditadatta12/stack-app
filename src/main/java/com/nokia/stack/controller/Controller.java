@@ -1,65 +1,38 @@
 package com.nokia.stack.controller;
 
 import com.nokia.stack.model.PushData;
-import com.nokia.stack.repo.MongoRepository;
+import com.nokia.stack.service.Service;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.annotation.Order;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
+@Api
 @RestController
 public class Controller {
 
     @Autowired
-    MongoRepository mongoRepository;
+    Service service;
 
-    @Autowired
-    private MongoTemplate mongoTemplate;
-
-    @GetMapping(value = "/test")
-    public ResponseEntity testMathod() {
-
-        return new ResponseEntity("It's My Result", HttpStatus.OK);
-
-    }
-
+    @ApiOperation(value = "To push data to Stack", tags = "Push Operation")
     @PostMapping(value = "/push")
-    public ResponseEntity push(@RequestBody PushData pushData) {
-
-        pushData.setTime(System.currentTimeMillis());
-
-        mongoRepository.save(pushData);
-
+    public ResponseEntity push(@RequestBody PushData pushData){
+        service.push(pushData);
         return new ResponseEntity("Data Pushed To Stack", HttpStatus.OK);
     }
 
+    @ApiOperation(value = "To get all data from Stack", tags = "Get Operation")
     @GetMapping(value = "/get")
-    public ResponseEntity get() {
-
-        Query query = new Query();
-        Sort sort = Sort.by(new Sort.Order(Sort.Direction.DESC, "time"));
-        query.with(sort);
-        List<PushData> pushData  = mongoTemplate.find(query, PushData.class);
-
-        return new ResponseEntity(pushData, HttpStatus.OK);
+    public ResponseEntity get(@RequestParam(name="db") String db) {
+        return service.get(db);
     }
 
+    @ApiOperation(value = "To Pop data from Stack", tags = "Pop Operation")
     @DeleteMapping(value = "/pop")
-    public ResponseEntity pop() {
-        Query query = new Query();
-        Sort sort = Sort.by(new Sort.Order(Sort.Direction.DESC, "time"));
-        query.with(sort);
-
-        List<PushData> pushData = mongoTemplate.find(query, PushData.class);
-        mongoRepository.delete(pushData.get(0));
-        return new ResponseEntity("Popped Successfully", HttpStatus.OK);
+    public ResponseEntity pop(@RequestParam(name="db") String db) {
+        return service.pop(db);
     }
 
 }
